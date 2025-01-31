@@ -1,8 +1,8 @@
-/* General Styles */
+/* Global Styles */
 body {
     font-size: 16px;
     padding: 10px;
-    background-color: #add8e6; /* Ensures background remains the same */
+    background-color: #add8e6; /* Ensuring background remains the same */
     margin: 0;
     font-family: Arial, sans-serif;
 }
@@ -61,49 +61,100 @@ th, td {
     text-align: left;
 }
 
-table, thead, tbody, th, td, tr {
-    display: table;
-    width: 100%;
+/* Responsive Design */
+@media (max-width: 1024px) {
+    body {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    form {
+        width: 80%;
+    }
+
+    table {
+        width: 90%;
+    }
 }
 
+/* Mobile View */
 @media (max-width: 768px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
     nav {
+        display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     nav a {
-        display: block;
         width: 90%;
         text-align: center;
+        font-size: 14px;
     }
 
-    form {
+    ul {
+        padding-left: 20px;
+    }
+
+    img {
         width: 90%;
+        height: auto;
     }
 
     table {
         display: block;
-        overflow-x: auto;
+        overflow-x: auto; /* Allows scrolling instead of breaking */
         white-space: nowrap;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    button {
+        font-size: 14px;
     }
 }
 
+/* Extra Small Screens (Phones) */
 @media (max-width: 480px) {
     h1 {
-        font-size: 1.5rem;
+        font-size: 20px;
     }
 
     h4 {
-        font-size: 1.2rem;
+        font-size: 16px;
     }
 
     nav a {
-        font-size: 0.9rem;
+        font-size: 12px;
+    }
+
+    img {
+        width: 100%;
     }
 
     form {
         width: 100%;
+        padding: 15px;
     }
 
     table {
@@ -111,7 +162,7 @@ table, thead, tbody, th, td, tr {
     }
 
     button {
-        padding: 10px;
+        padding: 8px;
         font-size: 14px;
     }
 }
