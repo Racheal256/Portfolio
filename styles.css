@@ -1,0 +1,135 @@
+/* Responsive Design */
+@media (max-width: 1024px) {
+    body {
+        font-size: 16px;
+        padding: 10px;
+        background-color: #add8e6; /* Ensure background remains the same */
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    form {
+        width: 80%;
+    }
+
+    table {
+        width: 90%;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    body {
+        background-color:  #add8e6; /* Retaining original background color */
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    nav {
+        display: block;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        margin: 5px 0;
+        font-size: 14px;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    img {
+        width: 90%;
+        height: auto;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table tr {
+        margin-bottom: 10px;
+        border: 1px solid  #add8e6;
+        padding: 10px;
+    }
+
+    table td {
+        display: block;
+        text-align: left;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    table td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+/* Extra Small Screens (Phones) */
+@media (max-width: 480px) {
+    body {
+        background-color: #add8e6; /* Ensuring it doesn't change */
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    button {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
