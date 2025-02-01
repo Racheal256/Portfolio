@@ -5,14 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>www.ug.com</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add basic styles for the responsive menu */
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* The hamburger menu icon */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: black;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* Ensure images are responsive */
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
+
     <h1>My Portfolio</h1>
+
+    <!-- Navigation Menu -->
     <nav>
-        <a href="#about-me">About Me</a> |
-        <a href="#hobbies">Hobbies</a> |
-        <a href="#portfolio">Portfolio</a> |
-        <a href="#contact">Contact</a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu" id="menu">
+            <a href="#about-me">About Me</a> |
+            <a href="#hobbies">Hobbies</a> |
+            <a href="#portfolio">Portfolio</a> |
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
     <h4 id="about-me">Short Bio</h4>
@@ -127,5 +186,14 @@
         <img src="./photos/racho 2 .png" alt="My best photo" width="250" height="250">
         <figcaption>This is my best photo ever.</figcaption>
     </figure>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("active");
+        }
+    </script>
+
 </body>
 </html>
+
