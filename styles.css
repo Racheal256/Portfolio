@@ -1,4 +1,4 @@
-/* Global Styles */
+/* Base styles for the page */
 * {
     margin: 0;
     padding: 0;
@@ -6,106 +6,123 @@
 }
 
 body {
-    font-size: 16px;
-    padding: 10px;
-    background-color: #add8e6;
     font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
-/* Navbar */
+h1, h4 {
+    text-align: center;
+    color: #333;
+}
+
 nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px;
-    background-color: white;
-    border-radius: 5px;
+    text-align: center;
+    margin: 10px 0;
 }
 
 nav a {
+    margin: 0 15px;
     text-decoration: none;
-    font-size: 1rem;
-    padding: 10px;
-    color: black;
-    background-color: white;
-    border-radius: 5px;
+    color: #333;
+    font-size: 1.2rem;
 }
 
-/* Form */
-form {
-    width: 100%;
-    max-width: 500px;
-    margin: auto;
-    padding: 15px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+nav a:hover {
+    color: #007BFF;
 }
 
-/* Images */
+/* Make the images responsive */
 img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    max-width: 500px; /* Adjust the max-width for better scaling */
     display: block;
-    margin: auto;
+    margin: 20px auto;
 }
 
-/* Table */
+/* Table styling */
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
 }
 
-thead {
-    background-color: #005f73;
-    color: white;
-}
-
 th, td {
-    border: 1px solid #ddd;
     padding: 10px;
     text-align: left;
+    border: 1px solid #ddd;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    body {
-        font-size: 16px;
-        padding: 10px;
-    }
+th {
+    background-color: #f4f4f4;
+}
 
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+/* Form styling */
+form {
+    text-align: center;
+    margin: 20px 0;
+}
 
-    nav a {
-        font-size: 14px;
-        padding: 8px;
-    }
+textarea, input[type="radio"], input[type="checkbox"] {
+    margin: 10px 0;
+}
 
-    form {
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Smooth scrolling behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Media Queries for responsive design */
+
+/* Large screens */
+@media only screen and (min-width: 1024px) {
+    .container {
         width: 80%;
+        margin: 0 auto;
+    }
+    nav a {
+        font-size: 1.5rem;
+    }
+}
+
+/* Medium screens (tablets and small laptops) */
+@media only screen and (max-width: 1024px) {
+    nav {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    img {
+        max-width: 100%;
     }
 
     table {
-        width: 90%;
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 1rem;
     }
 }
 
-/* Mobile View */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 22px;
-    }
-
-    h4 {
-        font-size: 18px;
-    }
-
+/* Small screens (phones) */
+@media only screen and (max-width: 768px) {
+    /* Stack the navigation links vertically */
     nav {
         display: flex;
         flex-direction: column;
@@ -113,62 +130,90 @@ th, td {
     }
 
     nav a {
-        width: 90%;
-        text-align: center;
-        font-size: 14px;
+        margin: 10px 0;
+        font-size: 1.2rem;
+    }
+
+    .container {
+        padding: 10px;
     }
 
     img {
-        width: 90%;
-        height: auto;
+        max-width: 100%;
     }
 
     table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
+        font-size: 0.8rem;
     }
 
     form {
-        width: 90%;
-    }
-
-    button {
-        font-size: 14px;
+        width: 100%;
     }
 }
 
-/* Extra Small Screens (Phones) */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 20px;
-    }
-
-    h4 {
-        font-size: 16px;
-    }
-
+/* Extra small screens (smaller phones) */
+@media only screen and (max-width: 480px) {
     nav a {
-        font-size: 12px;
-    }
-
-    img {
-        width: 100%;
-    }
-
-    form {
-        width: 100%;
-        padding: 15px;
-    }
-
-    table {
-        width: 100%;
+        font-size: 1rem;
     }
 
     button {
-        padding: 8px;
-        font-size: 14px;
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    .container {
+        padding: 5px;
+    }
+
+    h1, h4 {
+        font-size: 1.5rem;
     }
 }
+
+/* Mobile hamburger menu styles */
+#nav-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    width: 100%;
+    padding: 20px 0;
+}
+
+#nav-menu a {
+    color: white;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+}
+
+#nav-menu a:hover {
+    background-color: #444;
+}
+
+/* Hamburger button styling */
+#hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+    #hamburger {
+        display: block;
+        text-align: right;
+        margin: 10px 20px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav.active {
+        display: block;
+    }
+}
+
 
 
